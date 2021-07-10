@@ -1,13 +1,21 @@
 import styled from 'styled-components';
+import InputSearch from '../atoms/InputSearch.component';
 
 const Container = styled.div`
-  height: 50rem;
-  width: 50rem;
-  background-color: #00f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-basis: 40%;
+  margin: auto 0;
+  padding-top: 5rem;
 `;
 
 const CitySearch = () => {
-  return <Container />;
+  return (
+    <Container>
+      <InputSearch />
+    </Container>
+  );
 };
 
 export default CitySearch;
