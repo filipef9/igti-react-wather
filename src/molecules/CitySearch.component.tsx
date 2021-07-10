@@ -8,12 +8,13 @@ const Container = styled.div`
   flex-basis: 40%;
   margin: auto 0;
   padding-top: 5rem;
+  background-color: #00f;
 `;
 
 const CitySearch = () => {
   return (
     <Container>
-      <InputSearch />
+      <InputSearch hasFound />
     </Container>
   );
 };

@@ -1,3 +1,5 @@
+import '../styles/colors.styles.css';
+
 import CitySearch from '../molecules/CitySearch.component';
 
 const App = () => {
