@@ -1,8 +1,4 @@
-import cities from './entities/cities.json';
-import { City } from './entities/EntityDefinition';
+import fetchCities from "./ApiCalls";
+import { citiesQuery } from "./queries";
 
-const fetchCities = async (): Promise<City[]> => {
-  return JSON.parse(JSON.stringify(cities));
-};
-
-export default fetchCities;
+export { fetchCities, citiesQuery };
