@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import InputSearch from '../atoms/InputSearch.component';
+import useSearch from '../lib/UseSearch';
 
 const Container = styled.div`
   display: flex;
@@ -12,6 +13,10 @@ const Container = styled.div`
 `;
 
 const CitySearch = () => {
+  // const { isFetching, cities, filterCities } = useSearch();
+
+  // if (isFetching) return <div>Carregando...</div>;
+
   return (
     <Container>
       <InputSearch hasFound={false} />
