@@ -1,5 +1,8 @@
+import { useAtom } from 'jotai';
 import styled from 'styled-components';
+import { City } from '../api/entities/EntityDefinition';
 import InputSearch from '../atoms/InputSearch.component';
+import { citiesAtom } from '../global';
 import useSearch from '../lib/UseSearch';
 
 const Container = styled.div`
@@ -13,13 +16,16 @@ const Container = styled.div`
 `;
 
 const CitySearch = () => {
-  // const { isFetching, cities, filterCities } = useSearch();
-
-  // if (isFetching) return <div>Carregando...</div>;
+  const [cities] = useAtom(citiesAtom);
 
   return (
     <Container>
       <InputSearch hasFound={false} />
+      <div>
+        {cities.map((city: City) => (
+          <div>{city.name}</div>
+        ))}
+      </div>
     </Container>
   );
 };

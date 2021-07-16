@@ -1,5 +1,4 @@
 import { useAtom } from "jotai";
-import { useState } from "react";
 import { useQuery } from "react-query";
 import { citiesQuery, fetchCities } from "../api";
 import { City } from "../api/entities/EntityDefinition";
@@ -18,7 +17,7 @@ const useSearch = () => {
     }
 
     const list: City[] = data
-      ? data.filter((city: City) => city.name.indexOf(name) >= 0)
+      ? data.filter((city: City) => city.name.toLocaleLowerCase().indexOf(name.toLocaleLowerCase()) >= 0)
       : [];
     setCities(list);
   };
