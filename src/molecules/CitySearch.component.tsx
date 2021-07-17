@@ -1,11 +1,6 @@
-import { useAtom } from 'jotai';
-import { citiesAtom } from '../global';
-
-import { City } from '../api/entities/EntityDefinition';
-
 import styled from 'styled-components';
 import InputSearch from '../atoms/InputSearch.component';
-import CityTag from '../atoms/CityTag.component';
+import CityList from './CityList.component';
 
 const Container = styled.div`
   display: flex;
@@ -17,16 +12,10 @@ const Container = styled.div`
 `;
 
 const CitySearch = () => {
-  const [cities] = useAtom(citiesAtom);
-
   return (
     <Container>
       <InputSearch hasFound={false} />
-      <div>
-        {cities.map((city: City) => (
-          <CityTag name={city.name} />
-        ))}
-      </div>
+      <CityList />
     </Container>
   );
 };
