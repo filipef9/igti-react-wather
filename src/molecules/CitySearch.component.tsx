@@ -1,9 +1,11 @@
 import { useAtom } from 'jotai';
-import styled from 'styled-components';
-import { City } from '../api/entities/EntityDefinition';
-import InputSearch from '../atoms/InputSearch.component';
 import { citiesAtom } from '../global';
-import useSearch from '../lib/UseSearch';
+
+import { City } from '../api/entities/EntityDefinition';
+
+import styled from 'styled-components';
+import InputSearch from '../atoms/InputSearch.component';
+import CityTag from '../atoms/CityTag.component';
 
 const Container = styled.div`
   display: flex;
@@ -12,7 +14,6 @@ const Container = styled.div`
   flex-basis: 40%;
   margin: auto 0;
   padding-top: 5rem;
-  background-color: #00f;
 `;
 
 const CitySearch = () => {
@@ -23,7 +24,7 @@ const CitySearch = () => {
       <InputSearch hasFound={false} />
       <div>
         {cities.map((city: City) => (
-          <div>{city.name}</div>
+          <CityTag name={city.name} />
         ))}
       </div>
     </Container>
